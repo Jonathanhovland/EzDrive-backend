@@ -1,15 +1,15 @@
 
 exports.up = function(knex, Promise) {
-    return knex.schema.createTable('vehicle', function (table) {
-      table.increments()
-      table.integer('user_id').references('user.id').unsigned().onDelete('cascade')
-      table.string('veh-make')
-      table.string('veh-model')
-      table.string('veh-year')
-      table.string('veh-payment')
-      table.string('veh-insurance')
-    })
-   }
+  return knex.schema.createTable('vehicle', function (table) {
+    table.increments()
+    table.integer('users_id').references('users.id').unsigned().onDelete('cascade')
+    table.string('make')
+    table.string('model')
+    table.integer('year')
+    table.integer('payment')
+    table.integer('insurance')
+  })
+}
    
    exports.down = function(knex, Promise) {
     return knex.schema.dropTableIfExists('vehicle')

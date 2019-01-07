@@ -12,6 +12,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.send('😈😈😈😈😈')
+})
+
 app.use("/user", userRoutes)
 app.use("/vehicle", vehicleRoutes)
 app.use("/maintenance", maintenanceRoutes)
