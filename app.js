@@ -1,22 +1,24 @@
 const express = require ("express")
 const app = express()
 const bodyParser = require("body-parser")
+const morgan = require('morgan')
 const cors = require("cors")
 const port = process.env.PORT || 3005
 
-const userRoutes = require("./routes/user")
+const userRoutes = require("./routes/users")
 const vehicleRoutes = require("./routes/vehicle")
 const maintenanceRoutes = require("./routes/maintenance")
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
 app.use(cors())
 
 app.get('/', (req, res) => {
     res.send('😈😈😈😈😈')
 })
 
-app.use("/user", userRoutes)
+app.use("/users", userRoutes)
 app.use("/vehicle", vehicleRoutes)
 app.use("/maintenance", maintenanceRoutes)
 

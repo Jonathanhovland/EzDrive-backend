@@ -1,6 +1,6 @@
 
 exports.seed = function(knex, Promise) {
-  return knex.raw('DELETE FROM vehicle; ALTER SEQUENCE vehicle_id_seq RESTART WITH 7')
+  return knex.raw('DELETE FROM vehicle; ALTER SEQUENCE vehicle_id_seq RESTART WITH 2')
   .then(function () {
     return knex('vehicle').insert([
         {
