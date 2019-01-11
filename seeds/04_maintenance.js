@@ -6,11 +6,12 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           vehicle_id: 1,
-          veh_mileage: 40000,
+          maint_type_id: 1,
+          date: "1/2/2019",
+          miles: 42102,
+          cost: 20,
           gas_amount: 10,
-          gas_cost: 20,
-          maint_descr: "Oil Change",
-          maint_cost: 110
+          descr: "Scheduled Oil Change"
         }
       ])
     })
