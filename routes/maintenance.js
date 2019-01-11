@@ -62,4 +62,18 @@ router.get("/", (req, res) => {
       })
    })
 
+      // gas join 
+
+      router.get("/:id", (req, res, next) => {
+        const id = req.params.id
+        knex("maint_type")
+          .join("maintenance", "maint_type.id", "maintenance.maint_type_id")
+          .select("information","date", "miles", "cost", "gas_amount")
+          .where("maint_type.id", id)
+          .then(users => {
+            res.json({ users })
+          })
+          .catch(next)
+       })
+
 module.exports = router

@@ -6,6 +6,14 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           information: "Gas"
+        },
+        {
+          id: 2,
+          information: "Oil Change"
+        },
+        {
+          id: 3,
+          information: "Other"
         }
       ])
     })

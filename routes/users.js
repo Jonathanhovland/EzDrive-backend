@@ -13,7 +13,7 @@ router.get("/", (req, res, next) => {
    })
    
    //Get one route
-   router.get("/:id", (req, res, next) => {
+   router.get("/id/:id", (req, res, next) => {
     const id = req.params.id
    
     knex("users")
@@ -64,5 +64,18 @@ router.get("/", (req, res, next) => {
         res.json({ authors: deletedUser[0] })
       })
    })
+
+   //join 
+
+   router.get("/vehicle", (req, res, next) => {
+    knex("users")
+      .join("vehicle", "users.id", "vehicle.users_id")
+      .then(users => {
+        res.json({ users })
+      })
+      .catch(next)
+   })
+
+
 
 module.exports = router
