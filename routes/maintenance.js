@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
    })
    
    //Get one route
-   router.get("/:id", (req, res, next) => {
+   router.get("/id/:id", (req, res, next) => {
     const id = req.params.id
    
     knex("maintenance")
@@ -62,13 +62,12 @@ router.get("/", (req, res) => {
       })
    })
 
-      // gas join 
+      // maint. join 
 
       router.get("/:id", (req, res, next) => {
         const id = req.params.id
         knex("maint_type")
           .join("maintenance", "maint_type.id", "maintenance.maint_type_id")
-          .select("information","date", "miles", "cost", "gas_amount")
           .where("maint_type.id", id)
           .then(users => {
             res.json({ users })

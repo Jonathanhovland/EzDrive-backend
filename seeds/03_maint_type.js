@@ -13,6 +13,10 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
+          information: "Tire Rotation"
+        },
+        {
+          id: 4,
           information: "Other"
         }
       ])
