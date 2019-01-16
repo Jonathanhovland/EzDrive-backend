@@ -1,6 +1,6 @@
 
 exports.seed = function(knex, Promise) {
-  return knex.raw('DELETE FROM maint_type; ALTER SEQUENCE maint_type_id_seq RESTART WITH 2')
+  return knex.raw('DELETE FROM maint_type; ALTER SEQUENCE maint_type_id_seq RESTART WITH 5')
   .then(function () {
     return knex('maint_type').insert([
         {
