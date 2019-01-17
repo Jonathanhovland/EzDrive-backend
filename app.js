@@ -14,9 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(morgan(process.env.NODE_ENV !== 'production' ? 'dev' : 'combined'))
 app.use(cors())
 
-app.get('/', (req, res) => {
-    res.send('😈😈😈😈😈')
-})
+app.get("/", (req, res) => res.json({
+    "Vehicles": "https://ezzdrive.herokuapp.com/vehicle",
+    "Gas History": "https://ezzdrive.herokuapp.com/maintenance/id/1",
+    "Oil Change History": "https://ezzdrive.herokuapp.com/maintenance/id/2",
+    "Tire Rotation History": "https://ezzdrive.herokuapp.com/maintenance/id/3",
+    "Other Maintenance History": "https://ezzdrive.herokuapp.com/maintenance/id/4",
+    "Complete Vehicle History": "https://ezzdrive.herokuapp.com/maintenance"
+}));
 
 app.use("/users", userRoutes)
 app.use("/vehicle", vehicleRoutes)
