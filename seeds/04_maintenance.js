@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
           id: 1,
           vehicle_id: 1,
           maint_type_id: 1,
-          date: "1/2/2019",
+          date: "12/10/2018",
           miles: 42102,
           cost: 20,
           gas_amount: 10,
