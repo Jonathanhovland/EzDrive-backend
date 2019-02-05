@@ -6,8 +6,10 @@ exports.up = function(knex, Promise) {
       table.integer('maint_type_id').references('maint_type.id').unsigned().onDelete('cascade')
       table.string('date')
       table.integer('miles')
+      table.integer('trip_miles')
       table.integer('cost')
       table.integer('gas_amount')
+      table.integer('gas_mpg')
       table.string('descr')
     })
    }

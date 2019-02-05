@@ -9,8 +9,10 @@ exports.seed = function(knex, Promise) {
           maint_type_id: 1,
           date: "12/10/2018",
           miles: 42102,
+          trip_miles: 200,
           cost: 20,
           gas_amount: 10,
+          gas_mpg: 15
         },
         {
           id: 2,

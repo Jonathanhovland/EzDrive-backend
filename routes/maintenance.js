@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     const id = req.params.id
    
     knex("maintenance")
-      .where("maint_type_id", id)
+      .where("id", id)
       .then(maintenance => {
         res.json({ maintenance: maintenance })
       })
@@ -62,7 +62,7 @@ router.get("/", (req, res) => {
       })
    })
 
-      // maint. join 
+    // maint. join 
 
       router.get("/:id", (req, res, next) => {
         const id = req.params.id
